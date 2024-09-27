@@ -14,8 +14,10 @@ class TrainsTableSeeder extends Seeder
      *
      * @return void
      */
-    public function run()
+    public function run(Faker $faker)
     {
-        //
+        for($i=0; $i<25; $i++){
+            
+        }
     }
 }
