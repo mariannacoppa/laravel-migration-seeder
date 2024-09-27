@@ -30,12 +30,12 @@
                         <td>{{ $train->company }}</td>
                         <td>{{ $train->departure_station }}</td>
                         <td>{{ $train->arrival_station }}</td>
-                        <td>{{ $train->departure_time }}</td>
-                        <td>{{ $train->arrival_time }}</td>
+                        <td>{{$train->cancelled == 0 ? $train->departure_time : ''}}</td>
+                        <td>{{$train->cancelled == 0 ? $train->arrival_time : ''}}</td>
                         <td>{{ $train->train_code }}</td>
                         <td>{{ $train->train_wagons }}</td>
-                        <td>{{ $train->on_time }}</td>
-                        <td>{{ $train->cancelled }}</td>
+                        <td>{{$train->cancelled == 0 ? ($train->on_time ? 'Sì' : 'No') : ''}}</td>
+                        <td>{{$train->cancelled ? 'Sì' : 'No'}}</td>
                     </tr>
                     @endforeach
                 </tbody>
