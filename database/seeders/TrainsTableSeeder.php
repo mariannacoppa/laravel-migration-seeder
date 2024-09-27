@@ -18,6 +18,7 @@ class TrainsTableSeeder extends Seeder
     {
         for($i=0; $i<25; $i++){
             $train = new Train();
+
             $train->company = $faker->company();
             $train->departure_station = $faker->randomElement(['Milano', 'Roma', 'Bologna']);
             $train->arrival_station = $faker->randomElement(['Torino', 'Napoli', 'Genova']);
@@ -27,6 +28,8 @@ class TrainsTableSeeder extends Seeder
             $train->train_wagons = $faker->randomDigitNotNull();
             $train->on_time = $faker->boolean();
             $train->cancelled = $faker->boolean();
+
+            $train->save();
         }
     }
 }
